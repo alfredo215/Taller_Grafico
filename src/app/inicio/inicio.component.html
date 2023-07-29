@@ -1,0 +1,23 @@
+<div class="container">
+    <div class="row">
+        <div class="col-12">
+           <p class="display-4 p-4">Empleados</p>
+        </div>
+       <div class="col-3"   *ngFor="let empleado of empleados">
+            
+        <div class="mt-4">
+            <div class="card shadow">
+              <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/256/149/149071.png" alt="Imagen de la card">
+              <div class="card-body">
+                <h5 class="card-title">{{empleado.nombre}}</h5>
+                <p class="card-text">{{empleado.telefono}} | {{empleado.dui}}</p>
+                <a href="#" class="btn btn-primary">Botón de Acción</a>
+              </div>
+            </div>
+          </div>
+    </div>
+
+    
+        
+    </div>
+</div>
