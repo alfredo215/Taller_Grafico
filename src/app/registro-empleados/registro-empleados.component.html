@@ -1,1 +1,36 @@
-<p>registro-empleados works!</p>
+<div class="container">
+    <div class="row">
+      <div class="col-12">
+        <div class="container mt-4">
+          <form [formGroup]="formEmpleados" (ngSubmit)="onSubmit()">
+            <div class="form-group">
+              <label for="nombre">Nombre:</label>
+              <input type="text" id="nombre" class="form-control" formControlName="nombre">
+            </div>
+        
+            <div class="form-group">
+                <label for="telefono">Teléfono:</label>
+                <input type="text" id="telefono" class="form-control" formControlName="telefono" (input)="onTelefonoInput($event)" maxlength="8">
+                <div *ngIf="formEmpleados.get('telefono')?.invalid && (formEmpleados.get('telefono')?.dirty || formEmpleados.get('telefono')?.touched)">
+                  <div *ngIf="formEmpleados.get('telefono')?.hasError('pattern')">Teléfono inválido. Solo se permiten dígitos numéricos.</div>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="dui">Dui:</label>
+                <input type="text" id="dui" class="form-control" formControlName="dui" (input)="onDuiInput($event)" maxlength="10">
+                <div *ngIf="formEmpleados.get('dui')?.invalid && (formEmpleados.get('dui')?.dirty || formEmpleados.get('dui')?.touched)">
+                  <div *ngIf="formEmpleados.get('dui')?.hasError('pattern')">DUI inválido. Solo se permiten dígitos numéricos.</div>
+                  <div *ngIf="formEmpleados.get('dui')?.hasError('required')">El campo DUI es requerido.</div>
+                </div>
+              </div>
+              
+              
+  
+            <button type="submit" class="btn btn-primary" [disabled]="formEmpleados.invalid">Enviar</button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+  

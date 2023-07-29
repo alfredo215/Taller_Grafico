@@ -6,7 +6,7 @@ import { RegistroEmpleadosComponent } from './registro-empleados/registro-emplea
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
   { path: '', component: InicioComponent } ,
-  { path: 'nuevo', component: RegistroEmpleadosComponent }
+  { path: 'nuevo-empleado', component: RegistroEmpleadosComponent }
   
 ];
 @NgModule({

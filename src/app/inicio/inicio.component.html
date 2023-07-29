@@ -9,9 +9,13 @@
             <div class="card shadow">
               <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/256/149/149071.png" alt="Imagen de la card">
               <div class="card-body">
-                <h5 class="card-title">{{empleado.nombre}}</h5>
-                <p class="card-text">{{empleado.telefono}} | {{empleado.dui}}</p>
+                <h5 class="card-title">{{ empleado.nombre }}</h5>
+                <p class="card-text">
+                  <strong>Teléfono:</strong> {{ empleado.telefono }} <br>
+                  <strong>Dui:</strong> {{ empleado.dui }}
+                </p>
                 <a href="#" class="btn btn-primary">Botón de Acción</a>
+                
               </div>
             </div>
           </div>
