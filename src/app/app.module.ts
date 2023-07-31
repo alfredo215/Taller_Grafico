@@ -9,12 +9,18 @@ import { InicioComponent } from './inicio/inicio.component';
 import { RegistroEmpleadosComponent } from './registro-empleados/registro-empleados.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
+import { EmpleadoActualizarComponent } from './empleado-actualizar/empleado-actualizar.component';
+
+
 @NgModule({
   declarations: [
     AppComponent,
     MenuComponent,
     InicioComponent,
-    RegistroEmpleadosComponent
+    RegistroEmpleadosComponent,
+
+    EmpleadoActualizarComponent,
+
   ],
   imports: [
     BrowserModule,

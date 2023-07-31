@@ -1,27 +1,46 @@
 <div class="container">
-    <div class="row">
-        <div class="col-12">
-           <p class="display-4 p-4">Empleados</p>
-        </div>
-       <div class="col-3"   *ngFor="let empleado of empleados">
-            
-        <div class="mt-4">
-            <div class="card shadow">
-              <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/256/149/149071.png" alt="Imagen de la card">
-              <div class="card-body">
-                <h5 class="card-title">{{ empleado.nombre }}</h5>
-                <p class="card-text">
-                  <strong>Teléfono:</strong> {{ empleado.telefono }} <br>
-                  <strong>Dui:</strong> {{ empleado.dui }}
-                </p>
-                <a href="#" class="btn btn-primary">Botón de Acción</a>
-                
-              </div>
+  <div class="row">
+    <div class="col-12">
+      <p class="display-4 p-4">Empleados</p>
+    </div>
+    <div class="col-3" *ngFor="let empleado of empleados">
+      <div class="mt-4">
+        <div class="card shadow">
+          <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/256/149/149071.png" alt="Imagen de la card">
+          <div class="card-body">
+            <h5 class="card-title">{{ empleado.nombre }}</h5>
+            <p class="card-text">
+              <strong>Teléfono:</strong> {{ empleado.telefono }} <br>
+              <strong>Dui:</strong> {{ empleado.dui }}
+            </p>
+            <div class="d-flex justify-content-between"> <!-- Utilizar flexbox para alinear los botones -->
+              <button class="btn btn-danger" (click)="mostrarFormulario(empleado)">Eliminar</button>
+              <a routerLink="/empleado-actualizar/{{ empleado._id }}" class="btn btn-warning">Actualizar</a>
             </div>
           </div>
+        </div>
+      </div>
     </div>
+  </div>
+</div>
 
-    
-        
+<!-- Modal para el formulario de eliminación -->
+<div class="modal" [ngClass]="{ 'd-block': mostrarFormularioEliminar }">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">¿Estás seguro de querer eliminar {{ empleadoAEliminar?.nombre }}?</h5>
+        <button type="button" class="close" (click)="cancelarEliminacion()">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Esta acción no se podrá revertir.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="eliminarEmpleado()">Eliminar</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelarEliminacion()">Cancelar</button>
+      </div>
     </div>
+  </div>
 </div>
