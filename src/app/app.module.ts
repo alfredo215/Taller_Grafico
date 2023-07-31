@@ -10,6 +10,8 @@ import { RegistroEmpleadosComponent } from './registro-empleados/registro-emplea
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 import { EmpleadoActualizarComponent } from './empleado-actualizar/empleado-actualizar.component';
+import { AutomovilComponent } from './automovil/automovil.component';
+import { RegistroAutoComponent } from './registro-auto/registro-auto.component';
 
 
 @NgModule({
@@ -20,6 +22,8 @@ import { EmpleadoActualizarComponent } from './empleado-actualizar/empleado-actu
     RegistroEmpleadosComponent,
 
     EmpleadoActualizarComponent,
+     AutomovilComponent,
+     RegistroAutoComponent,
 
   ],
   imports: [

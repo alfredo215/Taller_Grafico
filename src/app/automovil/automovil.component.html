@@ -1,0 +1,41 @@
+<table class="table table-success table-striped-columns">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Propietario</th>
+        <th scope="col">Marca</th>
+        <th scope="col">Modelo</th>
+        <th scope="col">Año</th>
+        <th scope="col">Matricula</th>
+        <th scope="col">Diagnostico</th>
+        <th scope="col">Estado</th>
+        <th scope="col">Mecanico</th>
+        <th scope="col">Accion</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let auto of autos; let i = index">
+        <th scope="row">{{ i + 1 }}</th>
+        <td>{{ auto.propietario }}</td>
+        <td>{{ auto.marca }}</td>
+        <td>{{ auto.modelo }}</td>
+        <td>{{ auto.anio }}</td>
+        <td>{{ auto.matricula }}</td>
+        <td>{{ auto.diagnostico }}</td>
+        <td>{{ auto.estado }}</td>
+        <td>{{ auto.nombreEmpleado }}</td>
+
+        <td style="display: flex; justify-content: center; align-items: center;">
+            <div>
+              <button class="btn btn-danger">Eliminar</button>
+              <span style="margin-right: 5px;"></span> <!-- Espacio pequeño entre los botones -->
+              <a class="btn btn-warning">Actualizar</a>
+            </div>
+          </td>
+          
+
+          
+      </tr>
+    </tbody>
+  </table>
+  
