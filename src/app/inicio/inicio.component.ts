@@ -7,11 +7,14 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
-  empleados: any[]; // Declara una variable para almacenar los elementos de la API
+  empleados: any[];
+  empleadoAEliminar: any;
+  mostrarFormularioEliminar = false;
 
-  empleadoAEliminar: any; // Variable para almacenar el empleado que se quiere eliminar
-
-  mostrarFormularioEliminar = false; // Variable para controlar la visualización del formulario de eliminación
+  // Nuevas variables para mostrar los automóviles del empleado
+  empleadoSeleccionado: any;
+  automovilesDelEmpleado: any[] = [];
+  mostrarAutomoviles = false;
 
   constructor(private http: HttpClient) { }
 
@@ -22,18 +25,16 @@ export class InicioComponent implements OnInit {
   obtenerElementosDesdeAPI() {
     this.http.get<any[]>('http://localhost:3000/empleado')
       .subscribe(data => {
-        this.empleados = data; // Almacena los datos de la API en la variable "empleados"
+        this.empleados = data;
       });
   }
 
   mostrarFormulario(empleado: any) {
-    // Muestra el formulario de eliminación y guarda el empleado que se quiere eliminar
     this.empleadoAEliminar = empleado;
     this.mostrarFormularioEliminar = true;
   }
 
   cancelarEliminacion() {
-    // Oculta el formulario de eliminación y limpia la variable de empleado a eliminar
     this.empleadoAEliminar = null;
     this.mostrarFormularioEliminar = false;
   }
@@ -41,14 +42,30 @@ export class InicioComponent implements OnInit {
   eliminarEmpleado() {
     const url = `http://localhost:3000/empleado/${this.empleadoAEliminar._id}`;
     this.http.delete(url).subscribe(() => {
-      // Eliminación exitosa, puedes realizar alguna acción adicional si es necesario
       alert('Empleado eliminado con éxito');
-      this.obtenerElementosDesdeAPI(); // Vuelve a cargar la lista de empleados después de eliminar
-      this.cancelarEliminacion(); // Cierra el modal de eliminación
+      this.obtenerElementosDesdeAPI();
+      this.cancelarEliminacion();
     }, error => {
       console.error('Error al eliminar el empleado:', error);
-      this.cancelarEliminacion(); // Cierra el modal de eliminación en caso de error
+      this.cancelarEliminacion();
     });
   }
-  
+
+  // Nueva función para obtener los automóviles asociados a un empleado específico y mostrar el modal
+  mostrarAutomovilesDelEmpleado(empleadoId: string) {
+    this.mostrarAutomoviles = true;
+    this.empleadoSeleccionado = this.empleados.find(empleado => empleado._id === empleadoId);
+    const url = `http://localhost:3000/auto?trabajador=${empleadoId}`;
+    this.http.get<any[]>(url).subscribe(data => {
+      this.automovilesDelEmpleado = data.filter(automovil => automovil.trabajador === empleadoId);
+      console.log('Automóviles del empleado:', this.automovilesDelEmpleado);
+    });
+  }
+
+  // Nueva función para cancelar la visualización del modal de automóviles
+  cancelarMostrarAutomoviles() {
+    this.mostrarAutomoviles = false;
+    this.empleadoSeleccionado = null;
+    this.automovilesDelEmpleado = [];
+  }
 }
