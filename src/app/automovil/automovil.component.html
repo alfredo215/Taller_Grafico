@@ -1,3 +1,4 @@
+
 <table class="table table-success table-striped-columns">
     <thead>
       <tr>
@@ -27,9 +28,9 @@
 
         <td style="display: flex; justify-content: center; align-items: center;">
             <div>
-              <button class="btn btn-danger">Eliminar</button>
+              <button class="btn btn-danger" (click)="mostrarFormulario(auto)">Eliminar</button>
               <span style="margin-right: 5px;"></span> <!-- Espacio pequeño entre los botones -->
-              <a class="btn btn-warning">Actualizar</a>
+              <a class="btn btn-warning" routerLink="/auto-actualizar/{{ auto._id }}">Actualizar</a>
             </div>
           </td>
           
@@ -38,4 +39,27 @@
       </tr>
     </tbody>
   </table>
+  
+<!-- Modal para el formulario de eliminación -->
+<div class="modal" [ngClass]="{ 'd-block': mostrarFormularioEliminar }">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title">¿Estás seguro de querer eliminar el auto  {{ AutoAEliminar?.marca }} {{ AutoAEliminar?.modelo }}
+         año {{ AutoAEliminar?.anio }} que pertenece al señor {{ AutoAEliminar?.propietario }}?
+        </h5>
+        <button type="button" class="close" (click)="cancelarEliminacion()">
+          <span>&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+        Esta acción no se podrá revertir.
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-danger" (click)="eliminarAuto()">Eliminar</button>
+        <button type="button" class="btn btn-secondary" (click)="cancelarEliminacion()">Cancelar</button>
+      </div>
+    </div>
+  </div>
+</div>
   

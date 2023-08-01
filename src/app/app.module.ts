@@ -12,6 +12,7 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { EmpleadoActualizarComponent } from './empleado-actualizar/empleado-actualizar.component';
 import { AutomovilComponent } from './automovil/automovil.component';
 import { RegistroAutoComponent } from './registro-auto/registro-auto.component';
+import { ActualizarAutoComponent } from './actualizar-auto/actualizar-auto.component';
 
 
 @NgModule({
@@ -24,6 +25,7 @@ import { RegistroAutoComponent } from './registro-auto/registro-auto.component';
     EmpleadoActualizarComponent,
      AutomovilComponent,
      RegistroAutoComponent,
+     ActualizarAutoComponent,
 
   ],
   imports: [

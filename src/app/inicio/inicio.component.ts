@@ -50,4 +50,5 @@ export class InicioComponent implements OnInit {
       this.cancelarEliminacion(); // Cierra el modal de eliminación en caso de error
     });
   }
+  
 }

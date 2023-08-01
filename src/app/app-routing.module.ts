@@ -5,6 +5,7 @@ import { RegistroEmpleadosComponent } from './registro-empleados/registro-emplea
 import { EmpleadoActualizarComponent } from './empleado-actualizar/empleado-actualizar.component';
 import { AutomovilComponent } from './automovil/automovil.component';
 import { RegistroAutoComponent } from './registro-auto/registro-auto.component';
+import { ActualizarAutoComponent } from './actualizar-auto/actualizar-auto.component';
 
 const routes: Routes = [
   { path: '', redirectTo: '/', pathMatch: 'full' },
@@ -12,7 +13,8 @@ const routes: Routes = [
   { path: 'nuevo-empleado', component: RegistroEmpleadosComponent },
   { path: 'empleado-actualizar/:id', component:EmpleadoActualizarComponent},
   { path: 'automovil', component:AutomovilComponent},
-  { path: 'nuevo-auto', component:RegistroAutoComponent}
+  { path: 'nuevo-auto', component:RegistroAutoComponent},
+  { path: 'auto-actualizar/:id', component:ActualizarAutoComponent}
 
   
 ];
