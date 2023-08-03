@@ -1,34 +1,42 @@
-<div class="bg-primary p-2">
-    <div class="container">
-      <div class="row">
-        <nav class="navbar navbar-expand-lg navbar-light bg-primary ">
-          <div class="container-fluid">
-            <a class="navbar-brand" href="/"><i class="fa fa-book fa-2x text-white"></i></a>
-            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-              <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse" id="navbarNav">
-              <ul class="navbar-nav">
-                <li class="nav-item">
-                  <a class="nav-link text-white" routerLink="/">Inicio</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" routerLink="/nuevo-empleado">Nuevo Empleado</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" routerLink="/automovil">Automoviles</a>
-                </li>
-                <li class="nav-item">
-                  <a class="nav-link text-white" routerLink="/nuevo-auto">Nuevo Automovil</a>
-                </li>
-                
-              </ul>
-            </div>
+
+<div class="bg-dark">
+
+  <div class="container">
+    <div class="row">
+     
+      <nav class="navbar navbar-expand-lg">
+        <div class="container-fluid">
+          <a class="navbar-brand" href="/"><i class="fa fa-book fa-2x"></i>
+            <img src="https://cdn.niviweb.com/images/coches/logo-taller-1.png" alt="Logo" 
+            class="d-inline-block align-text-top ms-0" style="width: 100px; height: 50px;">
+            
+             <span class="ms-2 ps-0 text-white">TALLER-COYOLITO</span>
+          </a>
+
+          <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
+          <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav mx-auto"> <!-- Aquí se añade la clase "mx-auto" para centrar los elementos -->
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/" routerLinkActive="active">Inicio</a>
+              </li>
+              
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/nuevo-empleado" routerLinkActive="active">Nuevo Empleado</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/automovil" routerLinkActive="active">Automoviles</a>
+              </li>
+              <li class="nav-item">
+                <a class="nav-link text-white" routerLink="/nuevo-auto" routerLinkActive="active">Nuevo Automovil</a>
+              </li>
+            </ul>
+            
+           
           </div>
-        </nav>
-        
-      
-      </div>
+        </div>
+      </nav>
     </div>
   </div>
-
+</div>

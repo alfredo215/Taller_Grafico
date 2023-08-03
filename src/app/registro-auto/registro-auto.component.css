@@ -1,0 +1,29 @@
+.container {
+    display: flex;
+    justify-content: center; /* Centrar horizontalmente */
+    align-items: center; /* Centrar verticalmente */
+    height: 700px; /* altura de la ventana para centrar verticalmente */
+   
+   
+  }
+  
+  .row {
+    /*  ajustar el ancho máximo de la fila*/
+    width: 900px; 
+  }
+  
+  
+  /* Estilo para los labels en negrita */
+  label {
+  font-weight: bold;
+  }
+
+  button {
+    background-color: rgb(5, 125, 223);  
+    color: black; 
+    padding: 10px 20px; 
+    border: none; 
+    border-radius: 5px; 
+    cursor: pointer; 
+    font-weight: bold;
+  }

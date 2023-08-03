@@ -1,7 +1,9 @@
 <div class="container">
     <div class="row">
       <div class="col-12">
-        <div class="container mt-4">
+        <p class="display-5 p-4 text-center">Registrar Empleado</p>
+      </div>
+       
           <form [formGroup]="formEmpleados" (ngSubmit)="onSubmit()">
             <div class="form-group">
               <label for="nombre">Nombre:</label>
@@ -24,13 +26,13 @@
                   <div *ngIf="formEmpleados.get('dui')?.hasError('required')">El campo DUI es requerido.</div>
                 </div>
               </div>
-              
+              <br>
               
   
-            <button type="submit" class="btn btn-primary" [disabled]="formEmpleados.invalid">Enviar</button>
+            <button type="submit"  [disabled]="formEmpleados.invalid">Enviar</button>
           </form>
-        </div>
-      </div>
+        
+      
     </div>
   </div>
   

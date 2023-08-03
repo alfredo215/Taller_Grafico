@@ -1,24 +1,24 @@
 <div class="container">
   <div class="row">
     <div class="col-12">
-      <p class="display-4 p-4">Empleados</p>
+      <p class="display-5 p-4 text-center">Empleados</p>
     </div>
-    <div class="col-3" *ngFor="let empleado of empleados">
-      <div class="mt-4">
-        <div class="card shadow">
-          <img class="card-img-top" src="https://cdn-icons-png.flaticon.com/256/149/149071.png" alt="Imagen de la card">
+   <div class="col-3" *ngFor="let empleado of empleados">
+  <div class="mt-4 mb-6">
+    <div class="card shadow">
+          <img class="card-img-top rounded-circle  img-thumbnail" style="padding: 5px;" src="https://cdn-icons-png.flaticon.com/256/149/149071.png" alt="Imagen de la card">
           <div class="card-body">
             <h5 class="card-title">{{ empleado.nombre }}</h5>
             <p class="card-text">
               <strong>Teléfono:</strong> {{ empleado.telefono }} <br>
               <strong>Dui:</strong> {{ empleado.dui }}
             </p>
-            <div class="d-flex justify-content-between">
-              <button class="btn btn-danger" (click)="mostrarFormulario(empleado)">Eliminar</button>
+            <div class="d-flex flex-column">
+              <button class="btn btn-danger btn-sm mb-2" (click)="mostrarFormulario(empleado)">Eliminar</button>
               <!-- Agregar el botón para mostrar los automóviles del empleado -->
-              <button class="btn btn-primary" (click)="mostrarAutomovilesDelEmpleado(empleado._id)">Automóviles</button>
-              <a routerLink="/empleado-actualizar/{{ empleado._id }}" class="btn btn-warning">Actualizar</a>
-            </div>
+              <button class="btn btn-primary btn-sm mb-2" (click)="mostrarAutomovilesDelEmpleado(empleado._id)">Automóviles</button>
+              <a routerLink="/empleado-actualizar/{{ empleado._id }}" class="btn btn-warning btn-sm mb-2">Actualizar</a>
+           </div>
           </div>
         </div>
       </div>

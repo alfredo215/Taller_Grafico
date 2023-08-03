@@ -1,7 +1,7 @@
 
 <table class="table table-success table-striped-columns">
     <thead>
-      <tr>
+      <tr style="text-align: center">
         <th scope="col">#</th>
         <th scope="col">Propietario</th>
         <th scope="col">Marca</th>
@@ -16,28 +16,26 @@
     </thead>
     <tbody>
       <tr *ngFor="let auto of autos; let i = index">
-        <th scope="row">{{ i + 1 }}</th>
-        <td>{{ auto.propietario }}</td>
-        <td>{{ auto.marca }}</td>
-        <td>{{ auto.modelo }}</td>
-        <td>{{ auto.anio }}</td>
-        <td>{{ auto.matricula }}</td>
-        <td>{{ auto.diagnostico }}</td>
-        <td>{{ auto.estado }}</td>
-        <td>{{ auto.nombreEmpleado }}</td>
-
+        <th scope="row" style="text-align: center">{{ i + 1 }}</th>
+        <td style="text-align: center">{{ auto.propietario }}</td>
+        <td style="text-align: center">{{ auto.marca }}</td>
+        <td style="text-align: center">{{ auto.modelo }}</td>
+        <td style="text-align: center">{{ auto.anio }}</td>
+        <td style="text-align: center">{{ auto.matricula }}</td>
+        <td style="text-align: center">{{ auto.diagnostico }}</td>
+        <td style="text-align: center">{{ auto.estado }}</td>
+        <td style="text-align: center">{{ auto.nombreEmpleado }}</td>
+    
         <td style="display: flex; justify-content: center; align-items: center;">
-            <div>
-              <button class="btn btn-danger" (click)="mostrarFormulario(auto)">Eliminar</button>
-              <span style="margin-right: 5px;"></span> <!-- Espacio pequeño entre los botones -->
-              <a class="btn btn-warning" routerLink="/auto-actualizar/{{ auto._id }}">Actualizar</a>
-            </div>
-          </td>
-          
-
-          
+          <div>
+            <button class="btn btn-danger" (click)="mostrarFormulario(auto)">Eliminar</button>
+            <span style="margin-right: 5px;"></span> <!-- Espacio pequeño entre los botones -->
+            <a class="btn btn-warning" routerLink="/auto-actualizar/{{ auto._id }}">Actualizar</a>
+          </div>
+        </td>
       </tr>
     </tbody>
+    
   </table>
   
 <!-- Modal para el formulario de eliminación -->

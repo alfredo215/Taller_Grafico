@@ -7,6 +7,7 @@ import { HttpClient } from '@angular/common/http';
   styleUrls: ['./inicio.component.css']
 })
 export class InicioComponent implements OnInit {
+  [x: string]: any;
   empleados: any[];
   empleadoAEliminar: any;
   mostrarFormularioEliminar = false;
@@ -68,4 +69,9 @@ export class InicioComponent implements OnInit {
     this.empleadoSeleccionado = null;
     this.automovilesDelEmpleado = [];
   }
+
+  isActive(url: string): boolean {
+    return this['router'].url === url;
+  }
+  
 }

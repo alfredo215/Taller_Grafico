@@ -1,7 +1,10 @@
 <div class="container">
     <div class="row">
-        <div class="col-12">
-            <div class="container mt-4">
+        <div class="col">
+          <div class="col-12">
+            <p class="display-5 p-4 text-center">Registrar Auto</p>
+          </div>  
+
                 <form [formGroup]="formularioAuto" (ngSubmit)="onSubmit()">
 
                   <div class="form-group">
@@ -52,11 +55,12 @@
                     <option *ngFor="let empleado of empleados" [value]="empleado.id">{{ empleado.nombre }}</option>
                     </select>
                 </div>
+                <br>
                 
-                <button type="submit" class="btn btn-primary" [disabled]="formularioAuto.invalid">Enviar</button>
+                <button type="submit"  [disabled]="formularioAuto.invalid">Enviar</button>
   
                 </form>
-              </div>
+              
         </div>
     </div>
 </div>

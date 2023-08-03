@@ -1,0 +1,14 @@
+.navbarNav {
+    
+    justify-content: center;
+    
+  }
+  /* Estilo para el elemento activo del menú */
+
+
+.navbar-nav .nav-item .nav-link.active {
+  background-color: #54545463; 
+  border-radius: 8px; /* Agrega esquinas redondeadas */
+  padding: 8px 12px; /* Ajusta el relleno para obtener el tamaño deseado */
+}
+
